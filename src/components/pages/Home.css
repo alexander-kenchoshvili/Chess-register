@@ -1,0 +1,79 @@
+.header-logo{
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    width: 923px;
+    height: 84px;
+    background-color:  #7025FB;
+    
+}
+.logo{
+    position: absolute;
+    left: 6.5%;
+    right: 63.62%;
+    top: 35.71%;
+    bottom: 36.49%;
+}
+.landing-image{
+    background-image: url(../../images/Landing\ page-photo.png);
+    position: absolute;
+    width: 923px;
+    height: 1196px;
+    left: 0px;
+    top: 84px;
+}
+.landing-title{
+    position:fixed;
+    width: 997px;
+    height: 1280px;
+    left: 923px;
+    top: 0px;
+    background: #FD5334;
+}
+.landing-title >h2,
+.landing-title >h3{
+    position: absolute;
+    top: 265px;
+    left: 85px;
+    font-size: 80px;
+    color: #fff;
+    line-height: 109px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+}
+.landing-title >h3{
+    top: 390px;
+}
+.landing-title span{
+    color:#212529;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 27px;
+    margin-left: 26px;
+}
+.get-started{
+    position: fixed;
+    top: 601px;
+    left: 1008px;
+    font-family: 'Open Sans';
+    font-size:20px;
+    font-weight: 400;
+    line-height: 27px;
+    text-transform: capitalize;
+    outline: none;
+    border-radius: 8px;
+    background-color: #212529;
+    color: #fff;
+    padding: 13px 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    border: 4px solid #212529;
+    transition: 1ms ease-in;
+    
+}
+.get-started:hover{
+    border: 4px solid #C2A5F9CC;
+}

@@ -1,0 +1,37 @@
+.prev-btn{
+    width: 93px;
+    height: 53px;
+    font-family: 'Open Sans';
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: left;
+    padding: 13px 24px;
+    border-radius: 8px;
+    border: 1px solid #212529;
+    outline: none;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+.prev-btn:hover{
+    background: rgba(185, 180, 196, 0.3);
+    border: 1px solid #C2A5F9;
+}
+.next-btn{
+   background-color: #212529;
+   border: 1px solid #212529;
+   border-radius: 8px;
+   padding: 13px 24px;
+   font-family: 'Open Sans';
+   font-size: 20px;
+   font-weight: 400;
+   line-height: 27px;
+   gap: 10px;
+   color: #fff;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   text-transform: capitalize;
+   outline: none;
+}

@@ -1,0 +1,145 @@
+.secondary-logo{
+    position: fixed;
+    left: 0%;
+    top: 0%;
+    width: 923px;
+    height: 84px;
+    background-color:  #7025FB;
+}
+.first-cover{
+    background-image: url(../../images/first-cover1.png);
+    position: fixed;
+    width: 923px;
+    height: 1196px;
+    left: 0px;
+    top: 84px;
+}
+.cover-caption{
+    position: fixed;
+    top: 335px;
+    left: 132px;
+    cursor: default;
+}
+.cover-caption >h2{
+    font-size: 26px;
+    font-family: 'Nunito';
+    font-style: italic;
+    line-height: 35.46px;
+    font-weight: 800;
+    width: 423px;
+    text-transform: uppercase;
+}
+.cover-caption span{
+    font-family: Nunito;
+    font-size: 24px;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 33px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #E5E6E8;
+    text-transform: uppercase;
+    margin-top: 24px;
+    display: block;
+
+}
+.personal-info{
+    width: 980px;
+    height: 1280px;
+    background-color: #F5F5F5;;
+    left: 923px;
+    position: absolute;
+}
+.personal-info-title{
+    font-family: 'Open Sans';
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    text-transform: capitalize;
+    padding: 30px 0px 30px 48px;
+    border-bottom: 1px solid #B9B4C3;
+}
+.register-steps{
+    width: 366px;
+    height: 65px;
+    position: relative;
+    margin-top: 60px;
+    left: 48px;
+    display: flex;
+    justify-content: space-between;
+}
+.register-steps::after{
+    position: absolute;
+    content: '';
+    width: 174px;
+    top: 17px;
+    left: 103px;
+    height: 1px;
+    background-color: #B9B4C3;
+
+    
+}
+.first-step,
+.second-step{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.starting-numeration,
+.ending-numeration{
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    line-height: 24.51px;
+    font-family: 'Open Sans';
+    border: 1px solid #E5E6E8;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #212529;
+}
+.first-step span,
+.second-step span{
+    margin-top: 4px;
+    font-family: open sans;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #000000;
+}
+.ending-numeration{
+    background-color: #E5E6E8;
+}
+.info-field-caption{
+    margin-top: 112px;
+    margin-left: 48px;
+}
+.info-field-caption >h2{
+    font-family: 'Open Sans';
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 48px;
+    text-align: left;
+    color: #000000;
+
+}
+.info-field-caption span{
+    font-family: 'Open Sans';
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 21px;
+    text-align: left;
+    color: #95939A;
+}
+.form-field{
+    position: absolute;
+    top: 489px;
+    left: 987px;
+}
+.buttons{
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

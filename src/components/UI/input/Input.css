@@ -1,0 +1,35 @@
+.input-field {
+    padding-bottom: 48px;
+}
+.input-field input{
+    width: 734px;
+    height: 30px;
+    background: transparent;
+    box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.125);
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    padding-left: 16px;
+}
+.input-field input::placeholder{
+    text-transform: capitalize;
+    font-family: 'Open Sans';
+    font-weight: 400;
+    font-size: 16px;
+    color: #212529;
+}
+
+.input-field input:hover{
+    background-color: #F5F5F5;
+}
+.input-field input::-webkit-outer-spin-button,
+.input-field input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input-field input[type="date"]::-webkit-inner-spin-button,
+.input-field input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}

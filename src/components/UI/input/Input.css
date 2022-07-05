@@ -10,17 +10,34 @@
     border: none;
     outline: none;
     padding-left: 16px;
+    transition: 0.5s;
 }
-.input-field input::placeholder{
+.input-field span,
+.select-inputs label span,
+.characters label span{
+    color: #DC3545;
+    font-size: 20px;
+}
+.input-field label{
+    position: absolute;
     text-transform: capitalize;
     font-family: 'Open Sans';
     font-weight: 400;
     font-size: 16px;
     color: #212529;
-}
-
-.input-field input:hover{
+    left: 16px;
+    margin-top: 2px;
     background-color: #F5F5F5;
+    transition: 0.5s;
+}
+.input-field:hover.input-field input,
+.input-field:hover.input-field label{
+    background-color:#b4b4b4;
+}
+.input-field input[type="date"]::-webkit-inner-spin-button,
+.input-field input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
 }
 .input-field input::-webkit-outer-spin-button,
 .input-field input::-webkit-inner-spin-button {
@@ -28,8 +45,4 @@
   margin: 0;
 }
 
-.input-field input[type="date"]::-webkit-inner-spin-button,
-.input-field input[type="date"]::-webkit-calendar-picker-indicator {
-    display: none;
-    -webkit-appearance: none;
-}
+

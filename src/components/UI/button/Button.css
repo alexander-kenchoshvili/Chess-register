@@ -34,4 +34,5 @@
    align-items: center;
    text-transform: capitalize;
    outline: none;
+   cursor: pointer;
 }

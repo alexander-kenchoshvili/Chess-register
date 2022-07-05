@@ -1,0 +1,183 @@
+.second-cover-caption{
+    position: fixed;
+    top: 261px;
+    left: 117px;
+    cursor: default;
+}
+.second-cover-caption >h2{
+    left: 117px;
+    top: 261px;
+    font-family: 'Nunito';
+    font-style: italic;
+    font-weight: 800;
+    font-size: 26px;
+    line-height: 35px;
+    text-transform: uppercase;
+    color: #212529;
+    letter-spacing: -1px;
+
+}
+.second-cover-caption span{
+    font-family: 'Nunito';
+    font-size: 24px;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 33px;
+    letter-spacing: 0em;
+    text-align: right;
+    color: #093F68;
+    text-transform: uppercase;
+    margin-top: 32px;
+    display: block;
+}
+.chess-experience .starting-numeration{
+    background-color: #E9FAF1;
+}
+.chess-experience .ending-numeration{
+    background-color: transparent;
+}
+.select-field{
+    position: absolute;
+    top: 491px;
+    left: 961px;
+}
+.select-inputs,
+.characters{
+    position: relative;
+}
+
+.select-inputs input,
+.characters input{
+    height: 46px;
+    width: 392px;
+    border-radius: 4px;
+    background: #FFFFFF;
+    box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.125);
+    outline: none;
+    border: none;
+    padding-left: 16px;
+    font-family: 'Open Sans';
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    letter-spacing: 0em;
+    text-align: left;
+    text-transform: capitalize;
+    color: transparent;
+    text-shadow: 0 0 0 #000000;
+    cursor: pointer;
+}
+.select-iniputs input:focus{
+    outline: none;
+}
+.select-inputs label,
+.characters label{
+    position: absolute;
+    top: 12px;
+    left: 16px;
+    font-family: 'Open Sans';
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+.arrow-down,
+.arrow-up{
+    position: absolute;
+    top: 19px;
+    right: 19px;
+}
+.selected,
+.character-list{
+    padding-top: 28px;
+    background: #FFFFFF;
+    border: 1px solid rgba(185, 180, 196, 0.3);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    position: absolute;
+    width: 100%;
+    left: 10px;
+    top: 49px;
+    display: none;
+    z-index: 2;
+}
+.character-list{
+    left: 0;
+    padding-top: 48px;
+}
+.selected ul,
+.character-list ul{
+    list-style-type: none;
+}
+.selected li,
+.character-list li{
+    font-family: 'Open Sans';
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    letter-spacing: 0em;
+    padding-left: 20px;
+    text-align: left;
+    text-transform: capitalize;
+    margin-bottom: 24px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.selected li:hover{
+    background-color: #F7F7F9;
+    color: #000000;
+}
+.selected.active,
+.character-list.active{
+    display: block;
+}
+
+.select-character{
+    position: absolute;
+    top: 491px;
+    left: 1364px;
+}
+.characters label{
+    position: absolute;
+}
+.character-list span{
+    color: #817D7D;
+    color: #817D7D;
+    position: absolute;
+    top: 16px;
+    left: 18px;
+}
+.radioBtn{
+    position: absolute;
+    top: 625px;
+    left: 976px;
+}
+.radioBtn >p{
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 150%;
+    color: #212529;
+
+}
+.radioInputs{
+    display: flex;
+    margin-top: 20px;
+}
+.yesBtn{
+    margin-right: 16px;
+}
+.yesBtn label,
+.noBtn label{
+    margin-left: 10px;
+}
+.next-prev-btn{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    top: 885px;
+    left: 971px;
+    width: 783px;
+}

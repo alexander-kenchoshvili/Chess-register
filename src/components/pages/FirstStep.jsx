@@ -6,10 +6,7 @@ import Button from '../UI/button/Button';
 import ArrowRight from '../../images/arrow-right-circle.png';
 
 function FirstStep(props) {
-    console.log(props)
-
-
-    
+   
   return (
       <div>
           <div className='secondary-logo'>
@@ -40,26 +37,30 @@ function FirstStep(props) {
           <div className='form-field'>
               <form action="">
                   <Input
-                      placeholder='name'
+                      label='name'
                       type='text'
+                      id='type-text'
                   />
                   <Input
-                      placeholder='Email address'
+                      label='Email address'
                       type='email'
-
                   />
                   <Input
-                      placeholder="Phone number"
+                      label="Phone number"
                       type='number'
                   />
                   <Input
-                      placeholder='Date of birth'
+                      label='Date of birth'
                       type='date'
+                      id='date-type'
                   />
                   <div className='buttons'>
                     <Button onClick={props.onPrevPage} className='prev-btn'>Back</Button>
-                    <Button className='next-btn' >next
-                            <img src={ArrowRight} alt="arrow" />
+                      <Button
+                        onClick={props.onNextPage}
+                        className='next-btn'>
+                        next
+                        <img src={ArrowRight} alt="arrow" />
                     </Button>
                   </div>
               </form>

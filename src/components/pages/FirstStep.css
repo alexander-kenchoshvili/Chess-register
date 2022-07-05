@@ -5,14 +5,25 @@
     width: 923px;
     height: 84px;
     background-color:  #7025FB;
+    z-index: 2;
 }
-.first-cover{
+.first-cover,
+.second-cover,
+.last-cover{
     background-image: url(../../images/first-cover1.png);
     position: fixed;
     width: 923px;
     height: 1196px;
     left: 0px;
     top: 84px;
+}
+.second-cover{
+    background-image: url(../../images/second-cover.png);
+    top: 34px;
+}
+.last-cover{
+    background-image: url(../../images/last-cover.png);
+    height: 996px;
 }
 .cover-caption{
     position: fixed;
@@ -30,7 +41,7 @@
     text-transform: uppercase;
 }
 .cover-caption span{
-    font-family: Nunito;
+    font-family: 'Nunito';
     font-size: 24px;
     font-style: italic;
     font-weight: 500;
@@ -43,14 +54,16 @@
     display: block;
 
 }
-.personal-info{
+.personal-info,
+.chess-experience{
     width: 980px;
     height: 1280px;
     background-color: #F5F5F5;;
     left: 923px;
     position: absolute;
 }
-.personal-info-title{
+.personal-info-title,
+.chess-experience-title{
     font-family: 'Open Sans';
     font-size: 16px;
     font-weight: 600;

@@ -4,7 +4,6 @@ import Logo from '../../images/Khight cup logo.png';
 import ArrowRight from '../../images/arrow-right-circle.png';
 import Button from '../UI/button/Button';
 
-
 function Home(props) {
   return (
       <div>

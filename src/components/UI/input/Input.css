@@ -32,7 +32,8 @@
 }
 .input-field:hover.input-field input,
 .input-field:hover.input-field label{
-    background-color:#b4b4b4;
+    /* background-color:#F7F7F9; */
+    background-color: rgb(235, 230, 230);
 }
 .input-field input[type="date"]::-webkit-inner-spin-button,
 .input-field input[type="date"]::-webkit-calendar-picker-indicator {
@@ -45,4 +46,49 @@
   margin: 0;
 }
 
+.error-message{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    width: 350px;
+    height: 87px;
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    position: fixed;
+    left: 1531px;
+    top: 226px;
+}
+.invalid-field{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 9.5px 12px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05)
 
+}
+.invalid-field >p{
+    margin-left: 8px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px; 
+    color: #DC3545;
+}
+.circle{
+   width: 20px;
+   height: 20px;
+}
+.error-txt{
+    padding: 6px 12px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #212529;
+
+}

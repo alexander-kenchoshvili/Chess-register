@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './FirstStep.css';
 import Logo from '../../images/Khight cup logo.png';
 import Input from '../UI/input/Input';
@@ -6,7 +6,58 @@ import Button from '../UI/button/Button';
 import ArrowRight from '../../images/arrow-right-circle.png';
 
 function FirstStep(props) {
+    
+    const [name, setName] = useState('');
+    const [nameTouched, setNameTouched] = useState(false);
+    
+    const [email, setEmail] = useState('');
+    const [emailTouched, setEmailTouched] = useState(false);
+    
+    const [number, setNumber] = useState('');
+    const [numberTouched, setNumberTouched] = useState(false);
+    
+    const [age, setAge] = useState('');
+    const [ageTouched, setAgeTouched] = useState(false);
+    
+    const nameIsValid = name.trim().length > 2;
+    const nameInputIsInvalid = !nameIsValid && nameTouched;
+
+    const emailIsValid = email.trim().includes('@redberry.com')
+    const emailInputIsInvalid = !emailIsValid && emailTouched;
+
+    const numberIsValid = number.trim().length === 9;
+    const numberInputIsInvalid = !numberIsValid && numberTouched;
+
+    const ageIsValid = age !== '';
+    const ageInputIsInvalid = !ageIsValid && ageTouched;
+
+    const handleNameChange = (e) => {
+        setName(e.target.value)
+    };
+
+    const handleEmailChange = (e) => {
+        setEmail(e.target.value)
+    };
+    const handleNumberChange = (e) => {
+        setNumber(e.target.value)
+    };
+    
+    const handleAgeChange = (e) => {
+        setAge(e.target.value)
+    };
    
+    const onSubmitHandler = (e) => {
+        e.preventDefault();
+        setNameTouched(true)
+        setEmailTouched(true)
+        setNumberTouched(true)
+        setAgeTouched(true)
+        if (!nameIsValid || !emailIsValid || !numberIsValid || !ageIsValid ) {
+            return;
+        }
+        props.onNextPage()
+    };
+    console.log(age)
   return (
       <div>
           <div className='secondary-logo'>
@@ -35,29 +86,45 @@ function FirstStep(props) {
             </div>
           </div>
           <div className='form-field'>
-              <form action="">
+              <form onSubmit={ onSubmitHandler}>
                   <Input
                       label='name'
                       type='text'
                       id='type-text'
+                      onChange={handleNameChange}
+                      nameInputIsInvalid={nameInputIsInvalid}
+                      errHead='Invalid name'
+                      errInstruction='Please enter valid name'
                   />
                   <Input
                       label='Email address'
                       type='email'
+                      onChange={handleEmailChange}
+                      emailInputIsInvalid={emailInputIsInvalid}
+                      errHead='Invalid E-mail'
+                      errInstruction='Please enter valid E-mail'
                   />
                   <Input
                       label="Phone number"
                       type='number'
+                      onChange={handleNumberChange}
+                      numberInputIsInvalid={numberInputIsInvalid}
+                      errHead='Invalid phone number'
+                      errInstruction='Please enter valid phone number'
                   />
                   <Input
                       label='Date of birth'
                       type='date'
                       id='date-type'
+                      ageInputIsInvalid={ageInputIsInvalid}
+                      onChange={handleAgeChange}
+                      errHead='Invalid age'
+                      errInstruction='Please enter valid age'
                   />
                   <div className='buttons'>
                     <Button onClick={props.onPrevPage} className='prev-btn'>Back</Button>
-                      <Button
-                        onClick={props.onNextPage}
+                    <Button
+                        type='submit'
                         className='next-btn'>
                         next
                         <img src={ArrowRight} alt="arrow" />

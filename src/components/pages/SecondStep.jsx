@@ -78,7 +78,8 @@ function SecondStep(props) {
               <div className='characters'>
                   <label onMouseDown={handleActiveCharacter}  htmlFor="">Choose your character <span>*</span> </label>
                   <input value={chooseCharacter} onMouseDown={handleActiveCharacter} onBlur={characterBlur} onChange={changeCharacter} type="text" />
-                  {activeCharacter ? <img className='arrow-up' src={VectorUp} alt='arrowUp' /> : <img className='arrow-down' onMouseDown={handleActiveCharacter} src={VectorDown} alt="arrowDown" />}
+                  {activeCharacter ? <img className='arrow-up' src={VectorUp} alt='arrowUp' /> 
+                  : <img className='arrow-down' onMouseDown={handleActiveCharacter} src={VectorDown} alt="arrowDown" />}
                   <div className={activeCharacter ? 'character-list active' : 'character-list'}>
                       <ul>
                           <span>(total 4)</span>

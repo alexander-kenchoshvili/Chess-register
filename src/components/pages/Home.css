@@ -5,7 +5,6 @@
     width: 923px;
     height: 84px;
     background-color:  #7025FB;
-    
 }
 .logo{
     position: absolute;
@@ -72,7 +71,6 @@
     cursor: pointer;
     border: 4px solid #212529;
     transition: 1ms ease-in;
-    
 }
 .get-started:hover{
     border-color: #C2A5F9CC;

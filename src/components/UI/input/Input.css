@@ -1,9 +1,9 @@
 .input-field {
     padding-bottom: 48px;
 }
-.input-field input{
+.input-control{
     width: 734px;
-    height: 30px;
+    height: 40px;
     background: transparent;
     box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.125);
     border-radius: 4px;
@@ -11,14 +11,22 @@
     outline: none;
     padding-left: 16px;
     transition: 0.5s;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+}
+.input-control:last-child{
+    font-size: 14px;
 }
 .input-field span,
-.select-inputs label span,
-.characters label span{
+.select-inputs .label-control span,
+.characters .label-control span{
     color: #DC3545;
     font-size: 20px;
 }
-.input-field label{
+.label-control{
     position: absolute;
     text-transform: capitalize;
     font-family: 'Open Sans';
@@ -26,22 +34,22 @@
     font-size: 16px;
     color: #212529;
     left: 16px;
-    margin-top: 2px;
+    margin-top: 6px;
     background-color: #F5F5F5;
     transition: 0.5s;
 }
-.input-field:hover.input-field input,
-.input-field:hover.input-field label{
+.input-field:hover.input-field .input-control,
+.input-field:hover.input-field .label-control{
     /* background-color:#F7F7F9; */
     background-color: rgb(235, 230, 230);
 }
-.input-field input[type="date"]::-webkit-inner-spin-button,
-.input-field input[type="date"]::-webkit-calendar-picker-indicator {
+.input-field .input-control[type="date"]::-webkit-inner-spin-button,
+.input-field .input-control[type="date"]::-webkit-calendar-picker-indicator {
     display: none;
     -webkit-appearance: none;
 }
-.input-field input::-webkit-outer-spin-button,
-.input-field input::-webkit-inner-spin-button {
+.input-field .input-control::-webkit-outer-spin-button,
+.input-field .input-control::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -91,4 +99,19 @@
     line-height: 150%;
     color: #212529;
 
+}
+.invalid{
+    background-color: #FFEFEF;
+    color: #DC3545;
+}
+.error{
+    color: #DC3545;
+}
+.valid-sign{
+    position: relative;
+}
+.valid-sign img{
+    position: absolute;
+    top: -27px;
+    right: 13px;
 }

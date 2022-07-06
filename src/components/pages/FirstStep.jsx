@@ -6,6 +6,8 @@ import Button from '../UI/button/Button';
 import ArrowRight from '../../images/arrow-right-circle.png';
 
 function FirstStep(props) {
+
+    const [validSign, setValidSign] = useState(false);
     
     const [name, setName] = useState('');
     const [nameTouched, setNameTouched] = useState(false);
@@ -45,19 +47,20 @@ function FirstStep(props) {
     const handleAgeChange = (e) => {
         setAge(e.target.value)
     };
-   
+    const formError = !nameIsValid || !emailIsValid || !numberIsValid || !ageIsValid;
     const onSubmitHandler = (e) => {
         e.preventDefault();
         setNameTouched(true)
         setEmailTouched(true)
         setNumberTouched(true)
         setAgeTouched(true)
-        if (!nameIsValid || !emailIsValid || !numberIsValid || !ageIsValid ) {
+        setValidSign(true)
+        if (formError) {
             return;
         }
         props.onNextPage()
     };
-    console.log(age)
+    const progressing = formError && validSign ? 'starting-numeration' : 'starting-numeration progress';
   return (
       <div>
           <div className='secondary-logo'>
@@ -72,7 +75,7 @@ function FirstStep(props) {
               <div className='personal-info-title'>start creating your account</div>
               <div className='register-steps'>
                   <div className='first-step'>
-                      <div className='starting-numeration' >1</div>
+                      <div className={progressing} >1</div>
                       <span>Personal information</span>
                   </div>
                   <div className='second-step'>
@@ -95,6 +98,8 @@ function FirstStep(props) {
                       nameInputIsInvalid={nameInputIsInvalid}
                       errHead='Invalid name'
                       errInstruction='Please enter valid name'
+                      formError={formError}
+                      validSign={validSign}
                   />
                   <Input
                       label='Email address'
@@ -103,6 +108,8 @@ function FirstStep(props) {
                       emailInputIsInvalid={emailInputIsInvalid}
                       errHead='Invalid E-mail'
                       errInstruction='Please enter valid E-mail'
+                      formError={formError}
+                      validSign={validSign}
                   />
                   <Input
                       label="Phone number"
@@ -111,6 +118,8 @@ function FirstStep(props) {
                       numberInputIsInvalid={numberInputIsInvalid}
                       errHead='Invalid phone number'
                       errInstruction='Please enter valid phone number'
+                      formError={formError}
+                      validSign={validSign}
                   />
                   <Input
                       label='Date of birth'
@@ -120,6 +129,8 @@ function FirstStep(props) {
                       onChange={handleAgeChange}
                       errHead='Invalid age'
                       errInstruction='Please enter valid age'
+                      formError={formError}
+                      validSign={validSign}
                   />
                   <div className='buttons'>
                     <Button onClick={props.onPrevPage} className='prev-btn'>Back</Button>

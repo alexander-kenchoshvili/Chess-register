@@ -156,3 +156,6 @@
     justify-content: space-between;
     align-items: center;
 }
+.progress{
+    background-color: rgba(233, 250, 241, 1);
+}

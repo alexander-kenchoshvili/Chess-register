@@ -1,9 +1,9 @@
 import React from 'react';
 import './Input.css';
 import Error from '../../../images/assignment.svg';
+import Valid from '../../../images/valid.png';
 
 function Input(props) {
-  console.log(props.numberInputIsInvalid)
   const handleFocus = (e) => {
     e.target.style.display = 'none';
     e.target.nextElementSibling.focus();
@@ -16,11 +16,13 @@ function Input(props) {
       e.target.previousElementSibling.style.display = 'block';
     }
   }
-
+  const checkError = props.nameInputIsInvalid || props.emailInputIsInvalid || props.numberInputIsInvalid || props.ageInputIsInvalid;
+ 
   return (
     <div className='input-field'>
-      <label htmlFor={props.id} onClick={handleFocus} >{ props.label} <span>*</span>  </label>
-      <input
+      <label className={checkError? 'label-control error':'label-control' } htmlFor={props.id} onClick={handleFocus} >{ props.label} <span>*</span></label>
+      <input 
+        className={checkError?'input-control invalid':'input-control'}
         type={props.type}
         id={props.id}
         onFocus={inputFocus}
@@ -28,10 +30,7 @@ function Input(props) {
         onChange={props.onChange}
         onBlur={resetInputFocus}
       />
-      {(props.nameInputIsInvalid ||
-        props.emailInputIsInvalid ||
-        props.numberInputIsInvalid ||
-        props.ageInputIsInvalid) &&
+      {checkError &&
       <div className='error-message'>
           <div className='invalid-field'>
             <span className='circle'>
@@ -41,6 +40,10 @@ function Input(props) {
           </div>
           <div className='error-txt'>{props.errInstruction}</div>
       </div>}
+      {!checkError && props.validSign &&
+        <div className='valid-sign'>
+          <img src={Valid} alt="valid" />
+        </div>}
     </div>
   )
 }

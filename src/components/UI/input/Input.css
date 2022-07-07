@@ -21,8 +21,8 @@
     font-size: 14px;
 }
 .input-field span,
-.select-inputs .label-control span,
-.characters .label-control span{
+.select-inputs label span,
+.characters label span{
     color: #DC3545;
     font-size: 20px;
 }

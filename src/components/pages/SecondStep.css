@@ -70,10 +70,8 @@
 .select-iniputs input:focus{
     outline: none;
 }
-.select-inputs label,
-.characters label{
+.label-control{
     position: absolute;
-    top: 12px;
     left: 16px;
     font-family: 'Open Sans';
     font-size: 16px;
@@ -81,6 +79,12 @@
     line-height: 24px;
     letter-spacing: 0em;
     text-align: left;
+}
+.select-inputs .label-control,
+.characters .label-control{
+    top: 12px;
+    margin-top: 0px;
+    background-color: white;
 }
 .arrow-down,
 .arrow-up{
@@ -153,7 +157,7 @@
     top: 625px;
     left: 976px;
 }
-.radioBtn >p{
+.radio-title{
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 400;
@@ -180,4 +184,7 @@
     top: 885px;
     left: 971px;
     width: 783px;
+}
+.err{
+    color: #DC3545;
 }

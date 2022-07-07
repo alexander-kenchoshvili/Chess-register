@@ -24,7 +24,7 @@ function FirstStep(props) {
     const nameIsValid = name.trim().length > 2;
     const nameInputIsInvalid = !nameIsValid && nameTouched;
 
-    const emailIsValid = email.trim().includes('@redberry.com')
+    const emailIsValid = email.trim().includes('@redberry.ge')
     const emailInputIsInvalid = !emailIsValid && emailTouched;
 
     const numberIsValid = number.trim().length === 9;
@@ -60,7 +60,8 @@ function FirstStep(props) {
         }
         props.onNextPage()
     };
-    const progressing = formError && validSign ? 'starting-numeration' : 'starting-numeration progress';
+    const progressing = formError && validSign ? 'starting-numeration progress':'starting-numeration' ;
+ 
   return (
       <div>
           <div className='secondary-logo'>

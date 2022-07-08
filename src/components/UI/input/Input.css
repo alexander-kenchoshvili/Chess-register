@@ -31,7 +31,7 @@
     text-transform: capitalize;
     font-family: 'Open Sans';
     font-weight: 400;
-    font-size: 16px;
+    font-size: 18px;
     color: #212529;
     left: 16px;
     margin-top: 6px;
@@ -40,8 +40,7 @@
 }
 .input-field:hover.input-field .input-control,
 .input-field:hover.input-field .label-control{
-    /* background-color:#F7F7F9; */
-    background-color: rgb(235, 230, 230);
+    background-color: #E5E6E8;
 }
 .input-field .input-control[type="date"]::-webkit-inner-spin-button,
 .input-field .input-control[type="date"]::-webkit-calendar-picker-indicator {
@@ -106,6 +105,8 @@
 }
 .error{
     color: #DC3545;
+    background-color: #FFEFEF;
+
 }
 .valid-sign{
     position: relative;
@@ -114,4 +115,7 @@
     position: absolute;
     top: -27px;
     right: 13px;
+}
+.hide{
+    display: none;
 }

@@ -17,10 +17,12 @@ function Input(props) {
     }
   }
   const checkError = props.nameInputIsInvalid || props.emailInputIsInvalid || props.numberInputIsInvalid || props.ageInputIsInvalid;
- 
   return (
     <div className='input-field'>
-      <label className={checkError? 'label-control error':'label-control' } htmlFor={props.id} onClick={handleFocus} >{ props.label} <span>*</span></label>
+      <label className={props.value !== '' ? 'label-control hide' : checkError ?
+        'label-control error' : 'label-control'} htmlFor={props.id} onClick={handleFocus}>
+        {props.label}
+        <span>*</span></label>
       <input 
         className={checkError?'input-control invalid':'input-control'}
         type={props.type}
@@ -39,7 +41,7 @@ function Input(props) {
             <p>{props.errHead }</p>
           </div>
           <div className='error-txt'>{props.errInstruction}</div>
-      </div>}
+        </div>}
       {!checkError && props.validSign &&
         <div className='valid-sign'>
           <img src={Valid} alt="valid" />

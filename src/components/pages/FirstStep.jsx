@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './FirstStep.css';
 import Logo from '../../images/Khight cup logo.png';
 import Input from '../UI/input/Input';
@@ -6,46 +6,49 @@ import Button from '../UI/button/Button';
 import ArrowRight from '../../images/arrow-right-circle.png';
 
 function FirstStep(props) {
-
+ 
     const [validSign, setValidSign] = useState(false);
-    
-    const [name, setName] = useState('');
     const [nameTouched, setNameTouched] = useState(false);
-    
-    const [email, setEmail] = useState('');
     const [emailTouched, setEmailTouched] = useState(false);
-    
-    const [number, setNumber] = useState('');
     const [numberTouched, setNumberTouched] = useState(false);
-    
-    const [age, setAge] = useState('');
     const [ageTouched, setAgeTouched] = useState(false);
     
-    const nameIsValid = name.trim().length > 2;
+    const nameIsValid = props.formData.name.trim().length > 2;
     const nameInputIsInvalid = !nameIsValid && nameTouched;
 
-    const emailIsValid = email.trim().includes('@redberry.ge')
+    const emailIsValid = props.formData.email.trim().includes('@redberry.ge')
     const emailInputIsInvalid = !emailIsValid && emailTouched;
 
-    const numberIsValid = number.trim().length === 9;
+    const numberIsValid = props.formData.phone.trim().length === 9;
     const numberInputIsInvalid = !numberIsValid && numberTouched;
 
-    const ageIsValid = age !== '';
+    const ageIsValid = props.formData.date !== '';
     const ageInputIsInvalid = !ageIsValid && ageTouched;
 
     const handleNameChange = (e) => {
-        setName(e.target.value)
+        props.setFormData({
+            ...props.formData,
+            name:e.target.value
+        })
     };
-
     const handleEmailChange = (e) => {
-        setEmail(e.target.value)
+        props.setFormData({
+            ...props.formData,
+            email:e.target.value
+        })
     };
     const handleNumberChange = (e) => {
-        setNumber(e.target.value)
+        props.setFormData({
+            ...props.formData,
+            phone:e.target.value
+        })
     };
     
     const handleAgeChange = (e) => {
-        setAge(e.target.value)
+        props.setFormData({
+            ...props.formData,
+            date:e.target.value
+        })
     };
     const formError = !nameIsValid || !emailIsValid || !numberIsValid || !ageIsValid;
     const onSubmitHandler = (e) => {
@@ -60,7 +63,18 @@ function FirstStep(props) {
         }
         props.onNextPage()
     };
-    const progressing = formError && validSign ? 'starting-numeration progress':'starting-numeration' ;
+    useEffect(() => {
+        if (!formError) {
+            setValidSign(true)
+        }
+       
+    },[formError])
+    const backSubmit = (e) => {
+        e.preventDefault();
+        props.onPrevPage();
+       
+    }
+    const progressing = !formError || (formError && validSign) ? 'starting-numeration progress':'starting-numeration' ;
  
   return (
       <div>
@@ -101,6 +115,7 @@ function FirstStep(props) {
                       errInstruction='Please enter valid name'
                       formError={formError}
                       validSign={validSign}
+                      value={props.formData.name}
                   />
                   <Input
                       label='Email address'
@@ -111,6 +126,7 @@ function FirstStep(props) {
                       errInstruction='Please enter valid E-mail'
                       formError={formError}
                       validSign={validSign}
+                      value={props.formData.email}
                   />
                   <Input
                       label="Phone number"
@@ -121,6 +137,7 @@ function FirstStep(props) {
                       errInstruction='Please enter valid phone number'
                       formError={formError}
                       validSign={validSign}
+                      value={props.formData.phone}
                   />
                   <Input
                       label='Date of birth'
@@ -132,9 +149,10 @@ function FirstStep(props) {
                       errInstruction='Please enter valid age'
                       formError={formError}
                       validSign={validSign}
+                      value={props.formData.date}
                   />
                   <div className='buttons'>
-                    <Button onClick={props.onPrevPage} className='prev-btn'>Back</Button>
+                    <Button onClick={backSubmit} type='submit' className='prev-btn'>Back</Button>
                     <Button
                         type='submit'
                         className='next-btn'>

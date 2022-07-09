@@ -54,12 +54,16 @@
     display: block;
 
 }
+.first-step-wrapper{
+    background-color: #F5F5F5;
+    height: 100vh;
+    position: fixed;
+    left: 923px;
+    width: 100%;
+}
 .personal-info,
 .chess-experience{
-    width: 980px;
-    height: 1280px;
-    background-color: #F5F5F5;;
-    left: 923px;
+    width: 997px;
     position: absolute;
 }
 .personal-info-title,
@@ -147,8 +151,8 @@
 }
 .form-field{
     position: absolute;
-    top: 489px;
-    left: 987px;
+    top: 481px;
+    left: 48px;
 }
 .buttons{
     margin-top: 40px;

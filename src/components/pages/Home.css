@@ -15,9 +15,9 @@
 }
 .landing-image{
     background-image: url(../../images/Landing\ page-photo.png);
-    position: absolute;
+    position: fixed;
     width: 923px;
-    height: 1196px;
+    height: 100vh;
     left: 0px;
     top: 84px;
 }

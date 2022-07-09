@@ -11,9 +11,9 @@ const initialData = {
   name: '',
   email: '',
   phone: '',
-  date: '',
-  level: '',
-  participated: true,
+  date_of_birth: '',
+  experience_level: '',
+  already_participated: true,
   character_id:''
 }
 function getFormData() {

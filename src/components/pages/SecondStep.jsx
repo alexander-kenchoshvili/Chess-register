@@ -6,13 +6,16 @@ import VectorDown from '../../images/Vector-down.png';
 import VectorUp from '../../images/Vector-up.png';
 import Button from '../UI/button/Button';
 import ArrowRight from '../../images/arrow-right-circle.png';
+import { register } from '../../API';
+
 
 function SecondStep(props) {
 
-    const dropdownOptions = ['begginer', 'intermediate', 'professional'];
+    const dropdownOptions = ['beginner', 'normal', 'professional'];
     const [selectIsValid,setSelectIsValid] = useState(false)
     const [activeChoice, setActiveChoice] = useState(false);
     const [activeCharacter, setActiveCharacter] = useState(false);
+ 
     
     const characters = [...props.characters]
 
@@ -20,7 +23,7 @@ function SecondStep(props) {
         setActiveChoice(!activeChoice);
         props.setFormData({
             ...props.formData,
-            level:e.target.textContent
+            experience_level:e.target.textContent
         })
        e.target.parentElement.parentElement.parentElement.firstChild.style.display = 'none';
     }
@@ -44,12 +47,12 @@ function SecondStep(props) {
     const handleRadioChange = (e) => {
         props.setFormData({
             ...props.formData,
-            participated: e.target.value === 'yes' 
+            already_participated: e.target.value === 'yes' 
         })
     }
-    const levelIsValid = props.formData.level !== '';
+    const levelIsValid = props.formData.experience_level !== '';
     const characterIsValid = props.formData.character_id !== '';
-    const radioIsValid = props.formData.participated !== '';
+    const radioIsValid = props.formData.already_participated !== '';
     const checkError = !levelIsValid || !characterIsValid || !radioIsValid;
   
     const submitHandler = (e) => {
@@ -58,17 +61,24 @@ function SecondStep(props) {
         if (checkError ) {
             return;
         }
-        props.onNextPage();
+        register(props.formData)
+            .then(() => {
+                props.onNextPage();
+                localStorage.clear();
+            }).catch((err) => {
+            alert(err.message)
+        })
+        
     }
     const backSubmit = (e) => {
         e.preventDefault();
         props.onPrevPage();
     }
+   
     const errorLabel = checkError && selectIsValid ? 'label-control error' : 'label-control';
     const errorInput = checkError && selectIsValid ? 'input-control invalid' : 'input-control';
     const errorRadio = checkError && selectIsValid ? 'radio-title err' : 'radio-title';
     const changeBtnTxt = !checkError ? 'done' : 'next';
-    console.log(props.formData)
     return (
       <div>
         <div className='secondary-logo'>
@@ -106,13 +116,13 @@ function SecondStep(props) {
                         <label 
                             className={errorLabel}
                             onClick={handleActiveChoice}>
-                            {props.formData.level ? props.formData.level : 'Level of knowladge'}
-                            {!props.formData.level &&
+                            {props.formData.experience_level ? props.formData.experience_level : 'Level of knowladge'}
+                            {!props.formData.experience_level &&
                             <span>*</span>}
                         </label>
                         <input
                             className={errorInput}
-                            value={props.formData.level}
+                            value={props.formData.experience_level}
                             onChange={changeChoice}
                             onBlur={onMouseBlur}
                             onMouseDown={handleActiveChoice} type="text"
@@ -158,11 +168,11 @@ function SecondStep(props) {
                     <p className={errorRadio}>Have you participated in the Redberry Championship? <span>*</span></p>
                     <div className='radioInputs'>
                     <div className='yesBtn'>
-                        <input type="radio" value='yes' id='yes' checked={props.formData.participated===true}  name="checkExperience"  onChange={handleRadioChange} /> 
+                        <input type="radio" value='yes' id='yes' checked={props.formData.already_participated===true}  name="checkExperience"  onChange={handleRadioChange} /> 
                         <label htmlFor="yes">Yes</label>
                     </div>
                     <div className='noBtn'>
-                        <input type="radio" value="no" id='no'  checked={props.formData.participated===false} name="checkExperience" onChange={handleRadioChange} />
+                        <input type="radio" value="no" id='no'  checked={props.formData.already_participated===false} name="checkExperience" onChange={handleRadioChange} />
                         <label htmlFor="no">No</label>
                     </div>
                     </div>

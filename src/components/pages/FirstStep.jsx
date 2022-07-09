@@ -72,7 +72,6 @@ function FirstStep(props) {
     const backSubmit = (e) => {
         e.preventDefault();
         props.onPrevPage();
-       
     }
     const progressing = !formError || (formError && validSign) ? 'starting-numeration progress':'starting-numeration' ;
  

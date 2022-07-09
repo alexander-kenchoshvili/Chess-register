@@ -8,14 +8,12 @@ import Button from '../UI/button/Button';
 import ArrowRight from '../../images/arrow-right-circle.png';
 import { register } from '../../API';
 
-
 function SecondStep(props) {
 
     const dropdownOptions = ['beginner', 'normal', 'professional'];
     const [selectIsValid,setSelectIsValid] = useState(false)
     const [activeChoice, setActiveChoice] = useState(false);
     const [activeCharacter, setActiveCharacter] = useState(false);
- 
     
     const characters = [...props.characters]
 
@@ -68,7 +66,6 @@ function SecondStep(props) {
             }).catch((err) => {
             alert(err.message)
         })
-        
     }
     const backSubmit = (e) => {
         e.preventDefault();

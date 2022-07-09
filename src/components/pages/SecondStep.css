@@ -45,6 +45,12 @@
 .characters{
     position: relative;
 }
+.chess-experience{
+    
+    position: fixed;
+    left: 923px;
+
+}
 
 .select-inputs input,
 .characters input{
@@ -124,7 +130,7 @@
     padding-left: 20px;
     text-align: left;
     text-transform: capitalize;
-    margin-bottom: 24px;
+    margin-bottom: 18px;
     transition: 0.5s;
     cursor: pointer;
     color: #000000;

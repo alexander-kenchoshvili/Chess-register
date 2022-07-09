@@ -1,42 +1,51 @@
 
 import { useState,useEffect } from 'react';
+import { getCharacters } from './API';
 import './App.css';
 import FirstStep from './components/pages/FirstStep';
 import Home from './components/pages/Home';
 import LastStep from './components/pages/LastStep';
 import SecondStep from './components/pages/SecondStep';
-// import { Characters } from './components/Api/Characters';
 
+const initialData = {
+  name: '',
+  email: '',
+  phone: '',
+  date: '',
+  level: '',
+  participated: true,
+  character_id:''
+}
+function getFormData() {
+  let data = localStorage.getItem('formData')
+  if (data) {
+    return JSON.parse(data)
+  }
+  return initialData
+}
 function App() {
 
-  const [page, setPage] = useState(0);
-  const [firstPage, setFirstPage] = useState(false);
+  const [page, setPage] = useState(Number(localStorage.getItem('page')||0));
   const [characters,setCharacters]=useState([])
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    date: '',
-    level: '',
-    participated: true,
-    character_id:''
-  })
+  const [formData, setFormData] = useState(getFormData())
 
   useEffect(() => {
-    fetch(`https://chess-tournament-api.devtest.ge/api/grandmasters`)
-    .then((response) => response.json())
+    getCharacters()
     .then(data => setCharacters(data))
   }, []);
-
+  
   useEffect(() => {
-    const firstStorage = localStorage.getItem('firstPage');
-    if (firstStorage === 1) {
-      setFirstPage(true)
-    }
-  },[])
+    localStorage.setItem('formData',JSON.stringify(formData))
+  },[formData])
 
-  const handleNextPage = () => {setPage((currPage) => currPage + 1)};
-  const handlePrevPage = () => { setPage((currPage) => currPage - 1) };
+  const handleNextPage = () => {
+    setPage(page+1)
+    localStorage.setItem('page', page+1 )
+  };
+  const handlePrevPage = () => {
+    setPage(page - 1);
+    localStorage.setItem('page',page-1)
+  };
   return (
     <div className="App">
       {page === 0 && <Home onNextPage={handleNextPage} />}
